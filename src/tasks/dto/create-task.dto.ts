@@ -10,13 +10,21 @@
 // Import what you need from 'class-validator' and add the decorators below.
 // ─────────────────────────────────────────────────────────────────────────────
 
+import { IsString, IsNotEmpty, MinLength, MaxLength, IsOptional, IsEnum } from 'class-validator';
+
 export class CreateTaskDto {
-  // TODO: add validator decorators
+  @IsString()
+  @IsNotEmpty()
+  @MinLength(3)
+  @MaxLength(100)
   title: string;
 
-  // TODO: add validator decorators
+  @IsString()
+  @IsOptional()
+  @MaxLength(300)
   description?: string;
 
-  // TODO: add validator decorators
+  @IsEnum(['pending', 'in-progress', 'done'])
+  @IsOptional()
   status?: 'pending' | 'in-progress' | 'done';
 }

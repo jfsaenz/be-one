@@ -7,7 +7,7 @@ import { UsersModule } from './users/users.module';
   imports: [
     ProductsModule,
     TasksModule,
-    UsersModule, // TODO (Activity 3): you will build this module from scratch
+    UsersModule, 
   ],
 })
 export class AppModule {}
